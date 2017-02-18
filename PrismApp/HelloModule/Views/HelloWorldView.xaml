@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="HelloModule.Views.HelloWorldView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:viewModel="clr-namespace:Microsoft.Practices.Prism.Mvvm;assembly=Microsoft.Practices.Prism.Mvvm.Desktop"
+             mc:Ignorable="d" 
+             viewModel:ViewModelLocator.AutoWireViewModel="True">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50px"/>
+            <RowDefinition Height="50px"/>
+            <RowDefinition Height="50px"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Hello World" Foreground="Green" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Calibri" FontSize="24" FontWeight="Bold"></TextBlock>
+        <Button Grid.Row="1" Command="{Binding Path=SayHello}" CommandParameter="SubmitOrder" Content="{Binding Path=ButtonMsg}"/>
+        <Button Grid.Row="2" Command="{Binding Path=TakePicture}" CommandParameter="SubmitOrder" Content="Take"/>
+    </Grid>
+</UserControl>

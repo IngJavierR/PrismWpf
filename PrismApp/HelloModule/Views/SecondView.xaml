@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="HelloModule.Views.SecondView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mvvm="clr-namespace:Microsoft.Practices.Prism.Mvvm;assembly=Microsoft.Practices.Prism.Mvvm.Desktop"
+             mc:Ignorable="d"
+             mvvm:ViewModelLocator.AutoWireViewModel="True">
+    <Grid>
+            <TextBlock Text="Second"></TextBlock>
+            <Button Command="{Binding Path=SayHello}" CommandParameter="SubmitOrder" Content="{Binding Path=ButtonMsg}"/>
+    </Grid>
+</UserControl>
