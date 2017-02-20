@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using Microsoft.Practices.Prism.Modularity;
+using Microsoft.Practices.Prism.PubSubEvents;
 using Microsoft.Practices.Prism.UnityExtensions;
 
 namespace PrismApp

@@ -1,12 +1,17 @@
 ﻿using System.Windows;
 using System.Windows.Input;
+using HelloModule.Events;
 using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Mvvm;
+using Microsoft.Practices.Prism.PubSubEvents;
 
 namespace HelloModule.ViewModels
 {
     public class HelloViewModel : BindableBase
     {
+        #region MyRegion
+        protected readonly IEventAggregator EventAggregator;
+        #endregion
         #region Properties
 
         private string _buttonMsg;
@@ -22,8 +27,9 @@ namespace HelloModule.ViewModels
         #endregion
 
         #region Constructor
-        public HelloViewModel()
+        public HelloViewModel(IEventAggregator eventAggregator)
         {
+            EventAggregator = eventAggregator;
             SayHello = new DelegateCommand<object>(OnSubmit, CanSubmit);
             ButtonMsg = "ClickMe!";
         }
@@ -43,6 +49,7 @@ namespace HelloModule.ViewModels
         {
             MessageBox.Show("Hi!");
             ButtonMsg = "Again!";
+            EventAggregator.GetEvent<HelloEvent>().Publish(new object());
         }
         private static bool CanSubmit(object arg) { return true; }
 

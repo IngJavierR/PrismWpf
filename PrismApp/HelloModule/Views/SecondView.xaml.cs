@@ -1,4 +1,5 @@
-﻿using HelloModule.ViewModels;
+﻿using HelloModule.Events;
+using HelloModule.ViewModels;
 using Microsoft.Practices.Prism.Mvvm;
 
 namespace HelloModule.Views
@@ -11,7 +12,7 @@ namespace HelloModule.Views
         public SecondView()
         {
             InitializeComponent();
-            DataContext = new SecondViewModel();
+            DataContext = new SecondViewModel(ApplicationService.Instance.EventAggregator);
         }
     }
 }

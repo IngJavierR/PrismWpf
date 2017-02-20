@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Hello World" Height="350" Width="525">
     <DockPanel>
-        <ItemsControl Name="MainRegion" prism:RegionManager.RegionName="MainRegion" DockPanel.Dock="Top"/>
-        <ItemsControl Name="SecondRegion" prism:RegionManager.RegionName="SecondRegion" DockPanel.Dock="Bottom"/>
+        <ItemsControl Name="MainRegion" prism:RegionManager.RegionName="MainRegion" DockPanel.Dock="Left"/>
+        <ItemsControl Name="SecondRegion" prism:RegionManager.RegionName="SecondRegion" DockPanel.Dock="Right"/>
     </DockPanel>
 </Window>
